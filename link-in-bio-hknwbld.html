@@ -1,0 +1,342 @@
+<! DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hunter K. Newbold | HKNWBLD</title>
+  <meta name="description" content="I help local businesses get found online with clear, consistent, and measurable systems:  GBP, site structure, and directory orchestration." />
+
+  <!-- Tailwind (no-build) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Fonts (Space Mono for display/wordmark, Inter for body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* HKNWBLD – Calm Night Shift Color Remix (drop-in tokens) */
+    :root{
+      /* Foundations */
+      --obsidian-slate: #0F1115;   /* page background */
+      --tungsten-grey: #1E2128;   /* cards / secondary surfaces */
+
+      /* Text */
+      --text-on-dark:  #E6F7FA;    /* primary body text (cool off-white) */
+      --muted:  #9AA6B0;           /* secondary text */
+
+      /* Accents */
+      --electric-cyan: #00F0FF;   /* primary CTA / links / focus */
+      --terminal-green: #39FF14;  /* success / trust */
+      --system-alert: #FF2A6D;    /* urgent / errors */
+
+      /* Utility */
+      --focus-ring: rgba(0,240,255,0.14);
+      --card-border: rgba(255,255,255,0.035);
+      --card-surface: rgba(255,255,255,0.02);
+    }
+
+    html,body { height: 100%; }
+    body {
+      margin:0;
+      background:  var(--obsidian-slate);
+      color: var(--text-on-dark);
+      font-family:  'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* faint technical grid overlay (5% vibe via tiny lines) */
+    body::before{
+      content:  "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: 
+        linear-gradient(rgba(230,247,250,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,247,250,0.03) 1px, transparent 1px);
+      background-size: 28px 28px, 28px 28px;
+      z-index: 0;
+      opacity: 1;
+    }
+
+    h1,h2,h3,. brand-wordmark { font-family:  'Space Mono', monospace; }
+
+    /* Wordmark:  lowercase, heavy, tight kerning as system guidance */
+    .brand-wordmark {
+      font-weight: 700;
+      letter-spacing: -0.045em; /* tight lock-together feel */
+      text-transform: lowercase;
+      font-size: 1.125rem;
+      color: var(--text-on-dark);
+      display: inline-block;
+    }
+
+    /* Focus visibility (WCAG-friendly) */
+    *:focus-visible {
+      outline: 3px solid var(--electric-cyan);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px var(--focus-ring);
+    }
+
+    /* Card surface */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+      border-radius: 12px;
+    }
+
+    /* Avatar container */
+    .avatar-wrap { width: 112px; height:112px; margin: 0 auto; border-radius:9999px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.6); border:4px solid var(--electric-cyan); background:var(--tungsten-grey); }
+    .avatar-wrap img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Mobile menu transition */
+    #mobile-menu { transition:  max-height 0.28s ease-out; max-height:0; overflow:hidden; }
+    #mobile-menu.open { max-height:420px; }
+
+    /* Links & buttons */
+    .btn-primary {
+      background: var(--electric-cyan);
+      color: var(--obsidian-slate);
+      font-weight: 700;
+      border-radius:  10px;
+      padding: 0.75rem 1.25rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+    }
+    .btn-ghost-cyan {
+      background: transparent;
+      color: var(--electric-cyan);
+      border: 1px solid rgba(0,240,255,0.12);
+      font-weight:700;
+      border-radius:  10px;
+      padding:  0.6rem 1rem;
+    }
+    .btn-alert {
+      background: var(--system-alert);
+      color: white;
+      font-weight:700;
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+    }
+
+    . link-cyan { color: var(--electric-cyan); text-decoration:  underline; text-underline-offset: 3px; }
+
+    /* Muted text helper */
+    .muted { color: var(--muted); }
+
+    /* Form iframe container responsive */
+    .iframe-wrap { width:100%; max-width:100%; overflow:hidden; border-radius:8px; border:1px solid var(--card-border); }
+
+    /* Form inputs on dark surfaces (kept for any other forms) */
+    input[type="text"], input[type="email"], textarea {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-on-dark);
+      padding: 0.75rem;
+      border-radius: 8px;
+      width: 100%;
+    }
+    input:: placeholder { color: rgba(230,247,250,0.4); }
+
+    /* Responsive container */
+    . constrain { max-width:  740px; margin:  0 auto; padding: 0 1rem; position: relative; z-index: 10; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    }
+
+    /* small helper */
+    .sr-only. focus\:not-sr-only: focus: not(: focus-visible){ position:  absolute; left:-9999px; top: auto; width:1px; height:1px; overflow:hidden;}
+  </style>
+</head>
+
+<body class="antialiased selection:bg-[var(--electric-cyan)] selection:text-[var(--obsidian-slate)]">
+
+  <!-- Skip link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--electric-cyan)] focus:text-[var(--obsidian-slate)] focus:font-bold rounded-md outline-none border-2 border-[var(--electric-cyan)] transition-all">
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50" aria-hidden="false">
+    <div class="constrain py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="#" class="brand-wordmark" aria-label="HKNWBLD home">hknwbld</a>
+        <nav class="hidden sm:block text-sm muted">Contact | About | Standards</nav>
+      </div>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="btn-primary" id="header-cta">Get Started</a>
+      </div>
+
+      <div class="md:hidden flex items-center gap-3">
+        <a href="#contact" class="btn-primary">Get Started</a>
+        <button id="mobile-menu-btn" type="button" class="p-2 text-[var(--text-on-dark)]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="bg-[var(--tungsten-grey)] border-t border-[rgba(255,255,255,0.03)] md:hidden" aria-hidden="true">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#contact" class="block px-3 py-2 rounded font-medium link-cyan">Contact</a>
+        <a href="#about" class="block px-3 py-2 rounded font-medium link-cyan">About</a>
+        <a href="#standards" class="block px-3 py-2 rounded font-medium link-cyan">Standards</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="outline-none">
+    <!-- HERO -->
+    <section class="pt-12 pb-8">
+      <div class="constrain text-center">
+        <div class="avatar-wrap mb-4" aria-hidden="true">
+          <!-- Keep avatar. jpg in same folder (user-supplied image) -->
+          <img src="avatar.jpg" alt="Hunter K. Newbold">
+        </div>
+
+        <h1 class="mb-2">Hunter K. Newbold</h1>
+        <p class="text-lg muted mb-3">I help local businesses get found online in a clear, consistent, and measurable way. </p>
+
+        <p class="muted max-w-xl mx-auto mb-6">This includes setting up and managing Google Business Profiles, website structure, and local directories so customers can reliably discover your business.</p>
+
+        <div class="flex justify-center gap-3 mb-6">
+          <a href="https://calendar.app.google/zi3F4dzvgD1YnkBf9" target="_blank" rel="noopener noreferrer" class="btn-primary" id="hero-cta">Get Started</a>
+          <a href="#standards" class="btn-ghost-cyan">Standards</a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium muted">
+          <span class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4" style="color: var(--terminal-green)"></i> Licensed and insured</span>
+          <span class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4" style="color:var(--electric-cyan)"></i> Documented, repeatable processes</span>
+          <span class="flex items-center gap-2"><i data-lucide="check-square" class="w-4 h-4" style="color:var(--terminal-green)"></i> Proven work examples available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="py-6">
+      <div class="constrain card px-6 py-5">
+        <h2 class="text-lg font-semibold mb-3">Resources</h2>
+        <ul class="space-y-2 text-sm muted">
+          <li><a href="[ManualURL]" class="link-cyan">Operating manual (PDF)</a></li>
+          <li><a href="[GeneratorURL]" class="link-cyan">Outreach tools</a></li>
+          <li><a href="[BlogURL]" class="link-cyan">Blog</a></li>
+          <li><a href="[NewsletterURL]" class="link-cyan">Email updates</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact / Diagnostic CTA -->
+    <section class="py-8">
+      <div class="constrain text-center card px-6 py-6">
+        <h2 class="text-xl font-semibold mb-2">Want better local visibility?</h2>
+        <ul class="text-left mx-auto max-w-xs text-sm muted space-y-2 mb-4">
+          <li>• Short intake form</li>
+          <li>• Response within 1 business day</li>
+          <li>• Clear explanation of next steps</li>
+        </ul>
+        <a href="https://calendar.app.google/zi3F4dzvgD1YnkBf9" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a diagnostic</a>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-8">
+      <div class="constrain text-center">
+        <div class="card px-6 py-6">
+          <blockquote class="text-lg font-medium leading-relaxed mb-3">"Clear technical guidance and consistent processes made it easy for customers to find us locally."</blockquote>
+          <cite class="not-italic" style="color: var(--system-alert); font-weight:600; text-transform:uppercase; font-size:12px;">— Local business owner</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I work -->
+    <section id="about" class="py-10">
+      <div class="constrain text-center">
+        <h3 class="font-semibold mb-3">How I work</h3>
+        <p class="muted mb-4">I treat local visibility like infrastructure—not guesswork. I build clear, documented systems that turn people searching locally into real business results you can track.</p>
+
+        <h4 class="font-semibold mb-2">My approach: </h4>
+        <ul class="text-left mx-auto max-w-xs text-sm muted space-y-2">
+          <li>• Start with the technical foundation</li>
+          <li>• Use consistent, repeatable workflows</li>
+          <li>• Make everything easy to review and audit</li>
+          <li>• Keep things simple and focused</li>
+          <li>• Design around real outcomes, not vanity metrics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Website standards -->
+    <section id="standards" class="py-8">
+      <div class="constrain card px-6 py-6">
+        <h3 class="font-semibold mb-3">Website standards</h3>
+        <p class="muted mb-4">Every HKNWBLD website follows a clear checklist to ensure it works well, loads fast, and belongs fully to the client.  This includes:</p>
+
+        <ul class="text-left mx-auto max-w-xs text-sm muted space-y-2 mb-4">
+          <li>• Simple, direct language focused on action</li>
+          <li>• Accessibility that meets WCAG AA standards</li>
+          <li>• Mobile-first layout with strong performance</li>
+          <li>• Clear main call-to-action and minimal menus</li>
+          <li>• Full documentation and an exit plan for the client</li>
+        </ul>
+
+        <a href="[ChecklistURL]" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 mt-2 font-semibold btn-ghost-cyan">View full checklist</a>
+      </div>
+    </section>
+
+    <!-- Contact (updated email + Google Calendar booking) -->
+    <section id="contact" class="py-12">
+      <div class="constrain text-center card px-6 py-6">
+        <h3 class="font-semibold mb-3">Contact</h3>
+        <p class="muted mb-4">Email:  <a class="link-cyan" href="mailto:hknwbldsolutions@hotmail.com">hknwbldsolutions@hotmail.com</a></p>
+
+        <div class="mb-6">
+          <p class="muted mb-4">Or book directly using Google Calendar:</p>
+          <a href="https://calendar.app.google/zi3F4dzvgD1YnkBf9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 text-base font-bold rounded-md btn-primary">Schedule a Time</a>
+        </div>
+
+        <div class="text-xs muted mt-4">Response within one business day.  Clear explanation of next steps.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8" style="border-top: 1px solid rgba(255,255,255,0.03)">
+    <div class="constrain text-center text-xs muted">
+      <p>© 2026 HKNWBLD</p>
+      <p class="mt-2">All systems are documented and reviewable. Built and maintained by Hunter K. Newbold.</p>
+      <div class="flex gap-4 justify-center mt-3">
+        <a href="[PrivacyURL]" class="link-cyan">Privacy</a>
+        <a href="[AccessibilityURL]" class="link-cyan">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: icons + mobile toggle -->
+  <script>
+    // Build icons after lucide loads
+    if (window. lucide) {
+      document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    } else {
+      window.addEventListener('load', () => { if (window.lucide) lucide.createIcons(); });
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', (! expanded).toString());
+        mobileMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
