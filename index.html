@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hunter K. Newbold | HKNWBLD</title>
+  <meta name="description" content="System-grade local discovery for Salt Lake Valley. Engineered visibility, not marketing guesswork. Google Business Profile, SEO, and directory orchestration." />
+
+  <!-- Tailwind (no-build) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --obsidian-slate: #0F1115;
+      --tungsten-grey: #1E2128;
+      --text-on-dark:  #E6F7FA;
+      --muted:  #9AA6B0;
+      --electric-cyan: #00F0FF;
+      --terminal-green: #39FF14;
+      --system-alert: #FF2A6D;
+    }
+
+    html,body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--obsidian-slate);
+      color: var(--text-on-dark);
+      font-family:  'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: 
+        linear-gradient(rgba(230,247,250,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,247,250,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      z-index: 0;
+    }
+
+    h1, h2, h3, .brand-wordmark { font-family: 'Space Mono', monospace; }
+
+    .brand-wordmark {
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      text-transform: lowercase;
+      font-size: 1.125rem;
+      color: var(--text-on-dark);
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--electric-cyan);
+      outline-offset: 3px;
+    }
+
+    .avatar-wrap {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto;
+      border-radius: 9999px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      border: 4px solid var(--electric-cyan);
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .btn-primary {
+      background: var(--electric-cyan);
+      color: var(--obsidian-slate);
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+
+    .link-cyan { color: var(--electric-cyan); text-decoration: underline; text-underline-offset: 3px; }
+
+    .muted { color: var(--muted); }
+
+    .constrain { max-width: 640px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; }
+
+    header { position: sticky; top: 0; z-index: 50; }
+    #mobile-menu { transition: max-height 0.28s ease-out; max-height: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 300px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+
+    .sr-only { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-[var(--electric-cyan)] selection:text-[var(--obsidian-slate)]">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--electric-cyan)] focus:text-[var(--obsidian-slate)] focus:font-bold rounded-md">
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[var(--obsidian-slate)]/95 backdrop-blur-sm border-b border-[rgba(255,255,255,0.03)] h-[73px]">
+    <div class="constrain py-4 flex items-center justify-between h-full">
+      <!-- Empty Header as requested -->
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <!-- HERO -->
+    <section class="pt-12 pb-6 text-center">
+      <div class="constrain">
+        <div class="avatar-wrap mb-5" aria-hidden="true">
+          <img src="avatar.jpg" alt="Hunter K. Newbold" onerror="this.src='https://placehold.co/112x112/1E2128/00F0FF?text=HKN'">
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3">Hunter K. Newbold</h1>
+        <p class="text-lg text-[var(--electric-cyan)] font-mono mb-4 tracking-tight">System-Grade Local Discovery.</p>
+
+        <p class="muted max-w-lg mx-auto mb-6">
+          Local businesses get found online without guesswork. Engineered visibility. Salt Lake Valley.
+        </p>
+
+        <a href="https://calendar.app.google/zi3F4dzvgD1YnkBf9" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg mb-8">Schedule Diagnostic</a>
+
+        <!-- Removed pills as requested -->
+      </div>
+    </section>
+
+    <!-- System Capabilities (Replaces 'What I Do') -->
+    <section class="py-8 border-t border-[rgba(255,255,255,0.03)]">
+      <div class="constrain">
+        <h2 class="text-xl font-bold mb-3 uppercase tracking-wider text-[var(--muted)] text-sm">System Capabilities</h2>
+        <ul class="space-y-3 text-sm muted font-mono">
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">01.</span> 
+            <span><strong>Google Business Profile:</strong> Optimization and management for current-state accuracy.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">02.</span> 
+            <span><strong>Directory Orchestration:</strong> Consistency across 50+ local platforms.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">03.</span> 
+            <span><strong>Technical SEO:</strong> Infrastructure configuration for search indexing.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">04.</span> 
+            <span><strong>Site Architecture:</strong> Structured for operational clarity and conversion.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">05.</span> 
+            <span><strong>Systems Integration:</strong> Connection of inquiry, booking, and contact tools.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--electric-cyan)]">06.</span> 
+            <span><strong>Documentation:</strong> Full system handoff. You own the keys.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--system-alert)]">07.</span> 
+            <span><strong>Repair:</strong> Diagnostic fix of broken, outdated, or duplicated data.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Operational Doctrine (Replaces 'My Approach') -->
+    <section class="py-8 border-t border-[rgba(255,255,255,0.03)]">
+      <div class="constrain">
+        <h2 class="text-xl font-bold mb-3 uppercase tracking-wider text-[var(--muted)] text-sm">Operational Doctrine</h2>
+        <p class="muted mb-4 font-mono text-xs uppercase tracking-widest text-[var(--electric-cyan)]">Local visibility is infrastructure.</p>
+        
+        <div class="space-y-4 text-sm muted">
+          <p>We do not sell marketing. We engineer stability.</p>
+          
+          <ul class="space-y-2">
+            <li class="pl-3 border-l-2 border-[var(--tungsten-grey)]">
+              <strong class="text-[var(--text-on-dark)]">Audit First:</strong> Diagnose existing assets before building new ones.
+            </li>
+            <li class="pl-3 border-l-2 border-[var(--tungsten-grey)]">
+              <strong class="text-[var(--text-on-dark)]">Fix Foundations:</strong> Repair infrastructure before adding complexity.
+            </li>
+            <li class="pl-3 border-l-2 border-[var(--tungsten-grey)]">
+              <strong class="text-[var(--text-on-dark)]">Systems Over Hacks:</strong> Repeatable, documented workflows.
+            </li>
+            <li class="pl-3 border-l-2 border-[var(--tungsten-grey)]">
+              <strong class="text-[var(--text-on-dark)]">Outcomes Over Metrics:</strong> Inquiries and visits, not vanity stats.
+            </li>
+          </ul>
+
+          <p class="pt-2 font-mono text-xs">No hype. No black boxes. No lock-in.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-8 border-t border-[rgba(255,255,255,0.03)] bg-[var(--tungsten-grey)]/30">
+      <div class="constrain text-center">
+        <blockquote class="text-sm font-mono muted mb-3">"Clean, understandable systems that turn local searches into real inquiries."</blockquote>
+        <cite class="not-italic text-xs tracking-widest uppercase" style="color: var(--system-alert); font-weight: 600;">— Proven Outcome</cite>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-8 border-t border-[rgba(255,255,255,0.03)]">
+      <div class="constrain text-center">
+        <h2 class="text-xl font-bold mb-4">Initialize</h2>
+        <p class="muted mb-3">Identify what is working, what is broken, and what to fix next.</p>
+        <p class="muted mb-6 font-mono text-sm text-[var(--electric-cyan)]">hknwbldsolutions@hotmail.com</p>
+        <a href="https://calendar.app.google/zi3F4dzvgD1YnkBf9" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Diagnostic</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 border-t border-[rgba(255,255,255,0.03)] text-center text-xs muted font-mono">
+    <div class="constrain">
+      <p class="mb-4">© 2026 HKNWBLD. Built and maintained by Hunter K. Newbold.</p>
+      
+      <!-- Removed Privacy/Accessibility and Signature Block as requested -->
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) {
+      document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    }
+  </script>
+</body>
+</html>
